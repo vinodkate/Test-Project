@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-create .env and Setup Database
+create .env and setup database
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
