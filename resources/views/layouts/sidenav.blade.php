@@ -8,7 +8,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+          <a class="nav-link" href="{{ route('employee.index') }}">
           <span data-feather="users"></span>
           Employees
         </a>

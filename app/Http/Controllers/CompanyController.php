@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use App\Mail\CompanyRegister;
+use Illuminate\Support\Facades\Mail;
 
 class CompanyController extends Controller
 {
@@ -39,7 +41,7 @@ class CompanyController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:companies',
-            'logo' => 'required|dimensions:min_width=100,min_height=100',
+            'logo' => 'required|dimensions:min_width=100,min_height=100|mimes:jpeg,png',
             'website' => 'required|url',
         ]);
 
@@ -54,6 +56,8 @@ class CompanyController extends Controller
           'website' => $request->website,
           'logo' => $image
         ]);
+
+        @Mail::to($request->email)->send(new CompanyRegister($company));
 
         return redirect()->route('company.index')->with('message', 'Company Created Successfully');
 

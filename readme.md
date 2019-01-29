@@ -1,6 +1,6 @@
 # Project Title
 
-Test-Project - Admin Backend to manage companies/employees
+Test-Project - Admin Backend to manage companies/employees (Laravel 5.6)
 
 ## Getting Started
 
@@ -9,15 +9,25 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-create .env and setup database
-
+create .env and Setup Database
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=testproject
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
+setup mailtrap
+```
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=YOUR_USERNAME
+MAIL_PASSWORD=YOUR_PASSWORD
+MAIL_ENCRYPTION=null
+```
 Step - 1
 
 ```
@@ -47,7 +57,7 @@ php artisan storage:link
 # Ready to access TEST LOGIN
 
 ```
-Email : admin@Admin
+Email : admin@admin.com
 Password : password
 
 ```
@@ -55,7 +65,7 @@ Password : password
 
 ## Built With
 
-Laravel
+Laravel 5.6
 
 ## Contributing
 
