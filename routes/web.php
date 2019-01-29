@@ -19,8 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Company Routes
-Route::resource('/company', 'CompanyController');
 
-// Employee Routes
-Route::resource('/employee', 'EmployeeController');
+Route::middleware(['auth', 'web'])->group(function () {
+
+      // Company Routes
+      Route::resource('/company', 'CompanyController');
+
+      // Employee Routes
+      Route::resource('/employee', 'EmployeeController');
+});
